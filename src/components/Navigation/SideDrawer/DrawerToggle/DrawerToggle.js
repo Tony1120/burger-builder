@@ -6,8 +6,6 @@ const DrawerToggle = (props) => {
     	<div />
     	<div />
     	<div />
-
-
     </div>
   )
 }
