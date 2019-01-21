@@ -67,7 +67,10 @@ export default class ContactData extends Component {
 	orderHandler = (event) => {
 		event.preventDefault();	
 		console.log(this.props.ingredients);
-
+		const formData = {};
+		for (let formElementidentifier in this.state.orderForm) {
+			formData[formElementidentifier] = this.state.orderForm[formElementidentifier].value;
+		}
 		this.setState({
 			loading: true 
 		});
@@ -75,6 +78,7 @@ export default class ContactData extends Component {
 		const order = {
 			ingredients: this.props.ingredients,
 			price: this.props.price,
+			orderData: formData
 
 
 		}
@@ -119,7 +123,7 @@ export default class ContactData extends Component {
 			});
 		}
 		let form = (				
-				<form>
+				<form onSubmit = {this.orderHandler}>
 					{formElementsArray.map(formElement => (
 						<Input 
 							key = {formElement.id}
