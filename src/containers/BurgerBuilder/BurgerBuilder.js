@@ -19,18 +19,7 @@ class BurgerBuilder extends Component {
   };
 
   //   componentDidMount() {
-  //     axios
-  //       .get('https://react-burger-8b91a.firebaseio.com/ingredients.json')
-  //       .then(response => {
-  //         this.setState({
-  //           ingredients: response.data
-  //         });
-  //       })
-  //       .catch(error => {
-  //         this.setState({
-  //           error: true
-  //         });
-  //       });
+
   //   }
 
   updatePurchaseState = ingredients => {
@@ -131,13 +120,8 @@ const mapStateToProps = state => {
 };
 const mapDispatchToProps = dispatch => {
   return {
-    onIngredientAdded: ingName => {
-      console.log(
-        'burgerBuilderActions.addIngredient',
-        burgerBuilderActions.addIngredient
-      );
-      dispatch(burgerBuilderActions.addIngredient(ingName));
-    },
+    onIngredientAdded: ingName =>
+      dispatch(burgerBuilderActions.addIngredient(ingName)),
     onIngredientDeleted: ingName =>
       dispatch(burgerBuilderActions.removeIngredient(ingName))
   };
